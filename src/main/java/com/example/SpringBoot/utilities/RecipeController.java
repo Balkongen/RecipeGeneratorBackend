@@ -25,15 +25,9 @@ public class RecipeController {
 
     @GetMapping("/show_all")
     public List<Recipe> getAllRecipes() {
-        Query query = new Query();
 
-
-        recipes = recipeRepository.findAll();
-        for (Recipe recipe : recipes) {
-            System.err.println(recipe);
-        }
+        recipes = recipeRepository.findAll();  
         return recipes;
-//        return recipeRepository.findAll();
     }
 
     @GetMapping("/getRandRecipe")
@@ -46,19 +40,13 @@ public class RecipeController {
 
         int rand = random.nextInt(upper);
         return recipes.get(rand);
-
     }
 
-//    @GetMapping("/get/{name}")
-//    public Recipe getRecipe(@PathVariable String name) {
-////        recipeRepository.
-//        return recipeRepository.findByName(name);
-//    }
-//
-//    @GetMapping("/get_IDs")
-//    public List<String> getAllIDs() {
-////       return recipeRepository.findAll();
-//        return recipeRepository.findAllIDs();
-//    }
+    @GetMapping("/get/{name}")
+    public Recipe getRecipe(@PathVariable String name) {
+        recipeRepository.
+        return recipeRepository.findByName(name);
+    }
+
 
 }
