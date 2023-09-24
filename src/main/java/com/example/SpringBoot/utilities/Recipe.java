@@ -1,5 +1,7 @@
 package com.example.SpringBoot.utilities;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,8 +13,14 @@ public class Recipe {
     @Id
     private String id;
 
+//    @NotBlank()
+    @NotBlank(message = "Name is mandatory")
     private String name;
+
+    @NotEmpty(message = "Ingredient list is mandatory")
     private String[] ingredients;
+
+    @NotBlank(message = "Instructions is mandatory")
     private String instructions;
 
     public Recipe(String name, String[] ingredients, String instructions) {
