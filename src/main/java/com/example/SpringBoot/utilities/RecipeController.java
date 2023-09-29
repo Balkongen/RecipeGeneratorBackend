@@ -39,9 +39,6 @@ public class RecipeController {
 
     @RequestMapping(value = "/addRecipe", produces = "application/json", method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseEntity<Recipe> addRecipe(@Valid @RequestBody Recipe recipe) {
-        if (recipe.getName() == null || recipe.getInstructions() == null || recipe.getIngredients().length == 0)
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-
         recipeRepository.save(recipe);
         return new ResponseEntity<>(recipe, HttpStatus.OK);
     }

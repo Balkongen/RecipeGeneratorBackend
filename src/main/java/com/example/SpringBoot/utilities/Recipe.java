@@ -13,7 +13,6 @@ public class Recipe {
     @Id
     private String id;
 
-//    @NotBlank()
     @NotBlank(message = "Name is mandatory")
     private String name;
 
