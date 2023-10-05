@@ -42,4 +42,15 @@ public class RecipeController {
         recipeRepository.save(recipe);
         return new ResponseEntity<>(recipe, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/delete/{name}", method = RequestMethod.DELETE)
+    public ResponseEntity<Recipe> deleteRecipe(@PathVariable String name) {
+        Recipe recipe = getRecipe(name);
+
+        if (recipe == null)
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+
+        recipeRepository.delete(recipe);
+        return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+    }
 }
