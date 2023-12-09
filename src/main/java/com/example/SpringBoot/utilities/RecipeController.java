@@ -6,8 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5500")
@@ -35,6 +34,30 @@ public class RecipeController {
     @GetMapping("/get/{name}")
     public Recipe getRecipe(@PathVariable String name) {
         return recipeRepository.findByName(name);
+    }
+
+    @GetMapping("/getRecipeFromIngredients/{ingredientList}")
+    public List<Recipe> getRecipeBasedOnIngredients(@PathVariable List<String> ingredientList ) {
+        final int MINIMUM_NUMBER_OF_INGREDIENTS = 3;
+
+        HashSet<String> ingredients = new HashSet<>(ingredientList);
+        List<Recipe> recipes = recipeRepository.findAll();
+        List<Recipe> correctRecipes = new ArrayList<>();
+
+        int count = 0;
+        for (Recipe recipe : recipes) {
+            String[] ingredientsInRecipe = recipe.getIngredients();
+            for (String ingredient : ingredientsInRecipe) {
+                if (ingredients.contains(ingredient))
+                    count++;
+
+                if (count == MINIMUM_NUMBER_OF_INGREDIENTS)
+                    correctRecipes.add(recipe);
+            }
+
+        }
+
+        return recipes;
     }
 
     @RequestMapping(value = "/addRecipe", produces = "application/json", method = {RequestMethod.GET, RequestMethod.POST})
