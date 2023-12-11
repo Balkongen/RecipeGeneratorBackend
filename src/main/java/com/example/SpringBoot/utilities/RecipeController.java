@@ -44,9 +44,10 @@ public class RecipeController {
         List<Recipe> recipes = recipeRepository.findAll();
         List<Recipe> correctRecipes = new ArrayList<>();
 
-        int count = 0;
         for (Recipe recipe : recipes) {
             String[] ingredientsInRecipe = recipe.getIngredients();
+            int count = 0;
+            
             for (String ingredient : ingredientsInRecipe) {
                 if (ingredients.contains(ingredient))
                     count++;
