@@ -45,6 +45,29 @@ public class Recipe {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Recipe recipe = (Recipe) o;
+
+        if (id != null ? !id.equals(recipe.id) : recipe.id != null) return false;
+        if (name != null ? !name.equals(recipe.name) : recipe.name != null) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(ingredients, recipe.ingredients)) return false;
+        return instructions != null ? instructions.equals(recipe.instructions) : recipe.instructions == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(ingredients);
+        result = 31 * result + (instructions != null ? instructions.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Recipe{" +
                 "id='" + id + '\'' +
