@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 1200px) {
+    
+    #botCont #instructionsCont {
+        width: 60vw;
+    }
+    
+    #botCont #ingredientsCont {
+        width: 20vw;
+    }
+
+    #cont {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* nav {
+        visibility: visible;
+    } */
+
+    .firstPageBox {
+        width: 85vw;
+    }
+
+    html {
+        line-height: 1.5;
+    }
+    
+    #botCont {
+        flex-direction: column;
+    }
+
+    #botCont #instructionsCont, #botCont #ingredientsCont {
+        width: 85vw;
+    }
+    
+    #topCont {
+        width: 90vw;
+        height: fit-content;
+    }
+
+    #topCont:hover {
+        animation: none;
+        background-color: #ececec;
+    }
+
+    #topCont:active {
+        background-color: #ececec;
+    }
+
+    #textBox {
+        top: 0%;
+        margin-top: 20px;
+    }
+
+    #scrollBtnTextBox {
+        top: 30%;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    #scrollBtnTextBox {
+        top: 22%;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    #scrollBtnTextBox {
+        top: 20%;
+    }
+}

@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ececec;
+    color: #3b3b3b;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    visibility: hidden;
+}
+
+nav img {
+    height: 50px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #3b3b3b;
+}
+
+a:link {
+    color: #3b3b3b; 
+    text-decoration: none; 
+}
+
+#firstPage {
+    height: 100vh;
+}
+
+#firstPage h2 {
+    margin: 20px;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.firstPageBox {
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 15px #cdcdcd99;
+    width: 51vw;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+#textBox {
+    top: 5%;
+}
+
+#newRecipeBtn {
+    top: 20%;
+    background-color: #cdcdcd99;
+}
+
+#newRecipeBtn:hover {
+    animation: hoverDelay 0.5s;
+    background-color: #b3b3b3;
+    cursor: pointer;
+}
+
+@keyframes hoverDelay {
+    from {background-color: #cfcfcf;}
+    to {background-color: #b3b3b3;}
+}
+
+#scrollBtnTextBox {
+    top: 50%;
+    background-color: rgb(202, 178, 158);
+}
+
+#cont {
+    height: fit-content;
+    margin: 0 300px 0 300px;
+    height: 100vh;
+}
+
+#recipeCont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#topCont {
+    margin: 20px;
+    box-shadow: 0px 0px 15px rgba(245, 153, 232, 0.2);
+    height: 12vh;
+    width: 51vw;
+    transition: 0.5s background-color;
+}
+
+#topCont:hover {
+    animation: hoverDelay 0.5s;
+    background-color: #b3b3b3;
+    cursor: pointer;
+}
+
+@keyframes hoverDelay {
+    from {background-color: #cfcfcf;}
+    to {background-color: #b3b3b3;}
+}
+
+#topCont h2 {
+    margin-left: 10px;
+    user-select: none;
+}
+
+#botCont {
+    display: flex;
+    visibility: hidden;
+}
+
+#botCont #instructionsCont, #botCont #ingredientsCont {
+    height: fit-content;
+}
+
+#botCont div {
+    margin: 10px;
+    background-color: #d9d9d9;
+    height: 60vh;
+    padding: 10px;
+}
+
+#botCont #instructionsCont {
+    width: 33.5vw;
+}
+
+#instructionsCont p {
+    padding: 5px 10px 0 10px;
+}
+
+#botCont #ingredientsCont {
+    width: 15vw;
+}
+
+ul li {
+    padding: 5px;
+}
+
+h3 {
+    text-align: center;
+}

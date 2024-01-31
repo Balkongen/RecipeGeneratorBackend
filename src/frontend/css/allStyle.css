@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#topCont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 15px rgba(146, 121, 143, 0.2);
+    padding: 20px;
+    transition: 0.5s background-color;
+}
+
+#topCont:hover {
+    animation: hoverDelay 0.5s;
+    background-color: #b3b3b3;
+}
+
+@keyframes hoverDelay {
+    from {background-color: #cfcfcf;}
+    to {background-color: #b3b3b3;}
+}
+
+h2 {
+    text-align: center;
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/screenSize.css">
+    <link rel="stylesheet" href="/style/scrollBtn.css">
+    <script src="/scripts/Recipe.js"></script>
+    <script src="/scripts/GenerateRecipe.js"></script>
+    <!--Above used for illustration of generating recipe without using an external database-->
+    <script src="/scripts/scrollBtn.js"></script>
+    <script src = "scripts/recipeAPI.js"></script>
+</head>
+
+<body>
+    <div id="firstPage">
+        <h2>Recipe Generator</h2>
+        <div class="firstPageBox" id="textBox">
+            <p>Generate a tasty recipe with this website.</p>
+        </div>
+        <a href="newRecipe.html">
+            <div class="firstPageBox" id="newRecipeBtn">
+                <p>Create new recipe</p>
+            </div>
+        </a>        
+        <div class="firstPageBox" id="scrollBtnTextBox">
+            <p>Use the button bellow or scroll down to use the recipe generator.</p>
+        </div>    
+        <a href="#cont"><div id="scrollBtn" class="scrollBtnClass"></div>
+        </a>
+    </div>
+    <div id="cont">
+        <div id="recipeCont">
+            <div id="topCont"><h2 id="recipeTitle">New Recipe!</h2>
+            </div>
+            <div id="botCont">
+                <div id="ingredientsCont">
+                    <h4>Ingredients</h4>
+                    <ul id="ingList"></ul>
+                </div>
+                <div id="instructionsCont">
+                    <h4>Instructions</h4>
+                    <p id="instructionsP"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

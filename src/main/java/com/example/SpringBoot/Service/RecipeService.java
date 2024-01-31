@@ -4,6 +4,7 @@ package com.example.SpringBoot.Service;
 import com.example.SpringBoot.Model.Recipe;
 import com.example.SpringBoot.Repository.RecipeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,11 +13,11 @@ import java.util.List;
 import java.util.Random;
 
 
-@RequiredArgsConstructor
 @Service
 public class RecipeService {
 
-    private final RecipeRepository recipeRepository;
+    @Autowired
+    private RecipeRepository recipeRepository;
 
     public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();

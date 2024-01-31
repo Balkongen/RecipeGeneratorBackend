@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/screenSize.css">
+    <link rel="stylesheet" href="/style/form.css">
+    
+</head>
+
+<body>
+    <div id="firstPage">
+        <h2>Recipe Generator</h2>
+        <div class="formBox">
+            <h3>Create recipe below</h3>
+            <form action="" method="post" id="recipeForm">
+                
+                <label for="recipeTitle">Recipe Title:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="ingredients">Ingredients: Separate by comma</label>
+                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+    
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" rows="4" required></textarea>
+        
+                <input type="submit" value="Add Recipe">
+            </form>
+            <script src="/scripts/processRecipe.js"></script>
+            
+        </div>
+    </div>
+</body>
+</html>

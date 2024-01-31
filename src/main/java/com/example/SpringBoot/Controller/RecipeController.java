@@ -4,20 +4,21 @@ import com.example.SpringBoot.Model.Recipe;
 import com.example.SpringBoot.Service.RecipeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-@RequiredArgsConstructor
+
 @RestController
 @CrossOrigin(origins = "http://localhost:5500")
 @RequestMapping("/api")
 public class RecipeController {
 
-
-    private final RecipeService recipeService;
+    @Autowired
+    private RecipeService recipeService;
 
     @GetMapping("/all")
     public List<Recipe> getAllRecipes() {
