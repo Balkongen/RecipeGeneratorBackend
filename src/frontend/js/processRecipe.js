@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/addRecipe"
+const URL = "http://localhost:8080/api/recipe"
 
 document.getElementById("recipeForm").addEventListener("submit", function (event) {
     event.preventDefault();
