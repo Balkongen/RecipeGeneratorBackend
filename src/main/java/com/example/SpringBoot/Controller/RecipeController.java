@@ -13,22 +13,23 @@ import java.util.*;
 @RequiredArgsConstructor
 @RestController
 @CrossOrigin(origins = "http://localhost:5500")
+@RequestMapping("/api")
 public class RecipeController {
 
 
     private final RecipeService recipeService;
 
-    @GetMapping("/show_all")
+    @GetMapping("/all")
     public List<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
     }
 
-    @GetMapping("/getRandRecipe")
+    @GetMapping("/randomRecipe")
     public Recipe getRandomRecipe() {
         return recipeService.getRandomRecipe();
     }
 
-    @GetMapping("/get/{name}")
+    @GetMapping("/recipe/{name}")
     public Recipe getRecipe(@PathVariable String name) {
         return recipeService.getRecipe(name);
     }
@@ -38,15 +39,15 @@ public class RecipeController {
         return recipeService.getRecipesBasedOnIngredients(ingredientList);
     }
 
-    @RequestMapping(value = "/addRecipe", produces = "application/json", method = {RequestMethod.GET, RequestMethod.POST})
+    @PostMapping(value = "/recipe", produces = "application/json")
     public ResponseEntity<Recipe> addRecipe(@Valid @RequestBody Recipe recipe) {
         Recipe savedRecipe = recipeService.addRecipe(recipe);
         return new ResponseEntity<>(savedRecipe, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/delete/{name}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/recipe/{name}")
     public ResponseEntity<Recipe> deleteRecipe(@PathVariable String name) {
-        Recipe recipe = getRecipe(name);
+        Recipe recipe = recipeService.deleteRecipe(name);
 
         if (recipe == null)
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
