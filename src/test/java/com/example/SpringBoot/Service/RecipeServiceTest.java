@@ -1,12 +1,13 @@
-package com.example.SpringBoot.utilities;
+package com.example.SpringBoot.Service;
 
+import com.example.SpringBoot.Model.Recipe;
+import com.example.SpringBoot.Repository.RecipeRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,11 +1,9 @@
-package com.example.SpringBoot.utilities;
+package com.example.SpringBoot.Service;
 
 
-import lombok.AllArgsConstructor;
+import com.example.SpringBoot.Model.Recipe;
+import com.example.SpringBoot.Repository.RecipeRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

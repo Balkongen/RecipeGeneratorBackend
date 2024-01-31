@@ -1,4 +1,4 @@
-package com.example.SpringBoot.utilities;
+package com.example.SpringBoot.Model;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;

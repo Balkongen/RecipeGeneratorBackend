@@ -1,9 +1,9 @@
-package com.example.SpringBoot.utilities;
+package com.example.SpringBoot.Controller;
 
+import com.example.SpringBoot.Model.Recipe;
+import com.example.SpringBoot.Service.RecipeService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
