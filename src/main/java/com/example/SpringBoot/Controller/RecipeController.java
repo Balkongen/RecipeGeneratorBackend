@@ -25,7 +25,7 @@ public class RecipeController {
         return recipeService.getAllRecipes();
     }
 
-    @GetMapping("/randomRecipe")
+    @GetMapping("/random-recipe")
     public Recipe getRandomRecipe() {
         return recipeService.getRandomRecipe();
     }
@@ -35,9 +35,9 @@ public class RecipeController {
         return recipeService.getRecipe(name);
     }
 
-    @GetMapping("/getRecipeFromIngredients/{ingredientList}")
-    public List<Recipe> getRecipeBasedOnIngredients(@PathVariable List<String> ingredientList ) {
-        return recipeService.getRecipesBasedOnIngredients(ingredientList);
+    @GetMapping("/recipe-from-ingredients/{ingredients}")
+    public List<Recipe> getRecipeBasedOnIngredients(@PathVariable List<String> ingredients ) {
+        return recipeService.getRecipesBasedOnIngredients(ingredients);
     }
 
     @PostMapping(value = "/recipe", produces = "application/json")
