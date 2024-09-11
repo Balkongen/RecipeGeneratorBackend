@@ -1,5 +1,5 @@
 var clickDiv;
-const URL = "http://localhost:8080/api/randomRecipe"
+const URL = "http://localhost:8080/api/recipe/random"
 
 
 function init() {

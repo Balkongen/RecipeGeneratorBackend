@@ -20,12 +20,12 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping("/all")
+    @GetMapping("/recipes")
     public List<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
     }
 
-    @GetMapping("/random-recipe")
+    @GetMapping("/recipe/random")
     public Recipe getRandomRecipe() {
         return recipeService.getRandomRecipe();
     }
@@ -35,7 +35,7 @@ public class RecipeController {
         return recipeService.getRecipe(name);
     }
 
-    @GetMapping("/recipe-from-ingredients/{ingredients}")
+    @GetMapping("/recipe/{ingredients}")
     public List<Recipe> getRecipeBasedOnIngredients(@PathVariable List<String> ingredients ) {
         return recipeService.getRecipesBasedOnIngredients(ingredients);
     }
